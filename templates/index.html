@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE CROCHET STORE | Handmade With Love</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="announcement">
+    HANDMADE WITH LOVE · LITTLE THINGS, BIG HAPPINESS
+</div>
+
+<header>
+    <a class="logo" href="/">THE CROCHET STORE<span>♡</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop All</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Our Story</a>
+    </nav>
+
+    <div class="header-actions">
+        <button onclick="searchProducts()">⌕</button>
+        <button onclick="showWishlist()">♡ <span id="wish-count">0</span></button>
+        <button onclick="showCart()">Bag (<span id="cart-count">0</span>)</button>
+    </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="eyebrow">A LITTLE LOVE IN EVERY LOOP</p>
+        <h1>Made by hand.<br>Made with love.</h1>
+        <p>Thoughtful crochet creations to make your everyday a little more special.</p>
+        <a href="#shop" class="primary-btn">EXPLORE COLLECTION</a>
+    </div>
+    <div class="hero-art">
+        <div class="hero-flower">🌷</div>
+        <span>Handmade happiness</span>
+    </div>
+</section>
+
+<section class="collections" id="collections">
+    <div class="section-heading">
+        <p>FIND YOUR LITTLE FAVOURITE</p>
+        <h2>Shop by collection</h2>
+    </div>
+
+    <div class="collection-grid">
+        <a href="#shop" class="collection-card">
+            <span>🌸</span><h3>Flower Bouquets</h3>
+        </a>
+        <a href="#shop" class="collection-card">
+            <span>🧸</span><h3>Soft Toys</h3>
+        </a>
+        <a href="#shop" class="collection-card">
+            <span>🎀</span><h3>Accessories</h3>
+        </a>
+        <a href="#shop" class="collection-card">
+            <span>💝</span><h3>Gift Collection</h3>
+        </a>
+    </div>
+</section>
+
+<section class="shop" id="shop">
+    <div class="section-heading">
+        <p>MADE FOR YOUR HAPPY MOMENTS</p>
+        <h2>Our favourites</h2>
+    </div>
+
+    <div class="shop-toolbar">
+        <span>Explore our handmade collection</span>
+        <select id="sort" onchange="sortProducts()">
+            <option value="default">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+        </select>
+    </div>
+
+    <div class="product-grid" id="product-grid"></div>
+    <div class="pagination" id="pagination"></div>
+</section>
+
+<section class="story" id="about">
+    <div class="story-art">🧶</div>
+    <div>
+        <p class="eyebrow">A STORY IN EVERY STITCH</p>
+        <h2>Not just handmade.<br>Made from the heart.</h2>
+        <p>Every little creation is thoughtfully crafted, bringing warmth, colour and joy into your everyday life.</p>
+    </div>
+</section>
+
+<section class="newsletter">
+    <p>LET'S STAY IN TOUCH</p>
+    <h2>A little happiness in your inbox.</h2>
+    <form onsubmit="subscribe(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">SUBSCRIBE</button>
+    </form>
+</section>
+</main>
+
+<footer>
+    <h2>THE CROCHET STORE ♡</h2>
+    <p>Handmade with love, just for you.</p>
+    <p>© 2026 The Crochet Store</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
